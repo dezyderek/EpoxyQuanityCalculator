@@ -77,8 +77,9 @@
 
 <body>
     <div class="container">
-      <button onclick="window.location.href = 'index.html';"> Home </button>
+    
         <h1>RESIN CALCULATOR</h1>
+      <button onclick="window.location.href = 'index.html';"> Home </button>
         <div class="wrapper">
 
 
@@ -93,9 +94,6 @@
 
 
             <p>Dimension?</p>
-
-
-
             <select id="services">
                 <option selected disabled hidden>Select Liner</option>
                 <option value="0.58">DN 50 Flex</option>
@@ -107,8 +105,8 @@
               <option value="2.15">DN 200 Flex</option>
               
             </select>
-
-
+         
+            
 
 
             <button id="calculate">Calculate</button>
@@ -145,6 +143,7 @@
             let service = document.querySelector('#services').value;
             let epoxy = document.querySelector('#epoxy');
             let harder = document.querySelector('#harder');
+            let resin = document.querySelector('#resin');
         
             console.log(service);
             /*if statement will work when user 
@@ -164,11 +163,13 @@
             total = total.toFixed(4);
 
            
-            epoxy = 0.66 * total;
+           
+            epoxy = 0.716 * total;
             epoxy = epoxy.toFixed(3);
 
-            harder = total * 0.33;
+            harder = total * 0.284;
             harder = harder.toFixed(3);
+           
           
           
         
