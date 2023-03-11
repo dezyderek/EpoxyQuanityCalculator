@@ -1,96 +1,104 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-
-    body {
-      text-align: center;
-    }
-    .dropbtn {
-      background-color: #3498DB;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border-radius:10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .dropbtn:hover,
-    .dropbtn:focus {
-      background-color: #2980B9;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      overflow: auto;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown a:hover {
-      background-color: #ddd;
-    }
-
-    .show {
-      display: block;
-    }
-  </style>
+    <style>
+        body {
+            background-color: #001f4f;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .container {
+            width: 350px;
+            height: 500px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 20px;
+        }
+        
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: -60px;
+            width: 300px;
+            transform: translateX(-50%);
+            background-color: #FF851B;
+            color: #fff;
+            font-weight: 100;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            font-size: 18px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .wrapper {
+            padding: 20px;
+        }
+        
+        input,
+        select {
+            width: 80%;
+            border: none;
+            border-bottom: 1px solid #0074D9;
+            padding: 10px;
+        }
+        
+        input:focus,
+        select:focus {
+            border: 1px solid #0074D9;
+            outline: none;
+        }
+        
+        select {
+            width: 88% !important;
+        }
+        
+        button {
+            margin: 20px auto;
+            width: 150px;
+            height: 50px;
+            background-color: #39CCCC;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .tip {
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <h1>RESIN CALCULATOR</h1>
+        <div class="wrapper">
 
-  <h2>Epoxy Resin Quantity Calculation
-</h2>
-  <p>Click on the button to chose type of liner.</p>
 
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="semi.html">Semi<br>structural<br>(classII/III)</a>
-      <a href="full.html">Full<br>structural<br>(classIV)</a>
+
+      
+
+
+
+          
+
+        <img width="300" height="300" src="https://linetec.info/wp-content/uploads/2018/05/Inhouse-schnitt.jpg">
+
+          
+        
+
+
+
+            <button onclick="window.location.href = 'flex.html';" id="calculate">Flex</button>
+          <button onclick="window.location.href = 'pro.html';"  id="calculate">ProFlex</button>
+       
     </div>
-  </div>
-
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  </script>
-
 </body>
 
 </html>
