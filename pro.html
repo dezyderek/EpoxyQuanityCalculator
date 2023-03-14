@@ -95,7 +95,7 @@
 
 
 
-            <p>Dimension?</p>
+            <p>Materials</p>
 
 
 
@@ -112,6 +112,21 @@
             </select>
 
 
+          <select id="resin">
+                <option selected disabled hidden>Select Resin</option>
+                <option value="0.220">15</option>
+                <option value="0.200">30</option>
+                <option value="0.200">60</option>
+                <option value="0.200">180</option>
+                <option value="0.200">EX4-2</option>
+                <option value="0.220">EXR-2</option>
+              <option value="0.232">EXRR-2</option>
+              
+            </select>
+
+          
+         
+            
 
 
             <button id="calculate">Calculate</button>
@@ -119,16 +134,13 @@
 
         <div class="tip">
 
-
-
-            <p>Epoxy Quantity</p>
-            <p>Ratio 100:40</p>
-
+             <p>Epoxy Quantity</p>
+          
 
             <span id="total">0</span>Kg
             <span id="each">Total</span>
             <span id="epoxy">0</span>Epoxy
-            <span id="harder">0</span>Harder
+            <span id="hardener">0</span>Hardener
         </div>
     </div>
     <script>
@@ -146,8 +158,9 @@
             service to variables for further calculations.*/
             let amount = document.querySelector('#amount').value;
             let service = document.querySelector('#services').value;
-            let epoxy = document.querySelector('#epoxy');
-            let harder = document.querySelector('#harder');
+            let epoxy = document.querySelector('#epoxy').value;
+            let hardener = document.querySelector('#hardener');
+            let resin = document.querySelector('#resin').value;
         
             console.log(service);
             /*if statement will work when user 
@@ -166,13 +179,15 @@
             let total = (amount * service);
             total = total.toFixed(4);
 
-          
-            epoxy = 0.716 * total;
+           
+           
+            epoxy = (1.0 - resin) * total;
             epoxy = epoxy.toFixed(3);
 
-            harder = total * 0.284;
-            harder = harder.toFixed(3);
+            hardener = total * resin;
+            hardener = hardener.toFixed(3);
            
+          
           
         
             //finally displaying the tip value 
@@ -180,7 +195,7 @@
             document.querySelector('#total').innerHTML = total;
 
             document.querySelector('#epoxy').innerHTML = epoxy;
-            document.querySelector('#harder').innerHTML = harder;
+            document.querySelector('#hardener').innerHTML = hardener;
         }
     </script>
 </body>
